@@ -1,3 +1,4 @@
+import { readSavedPalette, readSavedThemes } from "../shared/palette.js";
 import { seedDemoAutofill } from "./demo-autofill.js";
 import { captureGreenhousePolicy } from "../server/opening-pull/policy.js";
 import {
@@ -54,10 +55,27 @@ const stages: ApplicationStatus[] = [
 ];
 
 /** All records, document bytes and dates are synthetic; no live adapters are used. */
+/** The owner's own saved theme, shown in the demo and the README screenshots. */
+export const demoTheme = {
+  id: "rosewood-slate",
+  name: "Rosewood Slate",
+  knobs: { hueNeutral: 360, hueBrand: 240, hueAccent: 70, chroma: 1.15 },
+};
+
 export async function seedDemo(store: Store, date = new Date()) {
   const at = (days: number) =>
     new Date(date.getTime() - days * 86400000).toISOString();
   const today = at(0);
+  const theme = demoTheme;
+  store.put("settings", "main", {
+    ...store.settings(),
+    palette: readSavedPalette({
+      id: theme.id,
+      knobs: theme.knobs,
+      revision: 1,
+    }),
+    themes: readSavedThemes({ items: [theme], revision: 1 }),
+  });
   seedOpenings(store, at);
   seedMaterials(store, today);
   seedMaterials(store, at(4), 5, "Willow Atlas");

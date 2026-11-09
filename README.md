@@ -86,4 +86,4 @@ Fieldwork is designed for one user and is not a hosted product. Agent and Gmail 
 
 ## License
 
-No license has been chosen yet; all rights reserved.
+This project is licensed under the [MIT License](LICENSE).

@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { paletteSaveProblem, themeSaveProblem } from "../shared/palette.js";
+import { demoTheme } from "../scripts/demo-seed.js";
 import { readFileSync, rmSync, mkdtempSync, writeFileSync } from "node:fs";
 import net from "node:net";
 import os from "node:os";
@@ -71,6 +73,18 @@ test("demo is synthetic, read-only, integration-free and refuses companion/non-l
     );
     assert.equal(gmail.connected, false);
     assert.equal(gmail.checking, false);
+    const theme = demoTheme;
+    assert.deepEqual(state.settings.palette, {
+      id: theme.id,
+      knobs: theme.knobs,
+      revision: 1,
+    });
+    assert.deepEqual(state.settings.themes, { items: [theme], revision: 1 });
+    assert.equal(themeSaveProblem(theme), undefined);
+    assert.equal(
+      paletteSaveProblem(state.settings.palette, state.settings.themes.items),
+      undefined,
+    );
     assert.equal(state.greenhousePull.added, 5);
     assert.equal(state.greenhousePull.status, "paused");
     assert.equal(state.greenhousePull.policy.legacy, undefined);
