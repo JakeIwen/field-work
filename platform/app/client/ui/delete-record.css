@@ -1,0 +1,9 @@
+.delete-record { flex: 0 0 auto; color: var(--muted); }
+.delete-record:hover { color: var(--danger-text); }
+.record-with-delete { display: flex; align-items: center; gap: .35rem; }
+.record-with-delete > :first-child { flex: 1; min-width: 0; }
+.delete-record-dialog { color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; width: min(580px, calc(100vw - 32px)); max-height: 85vh; overflow: auto; padding: 24px; }
+.delete-record-dialog::backdrop { background: var(--backdrop); }
+.delete-record-dialog h2 { margin-top: 0; }
+.delete-record-dialog ul { padding-left: 20px; overflow-wrap: anywhere; }
+.delete-record-dialog .row-wrap { margin-top: 20px; justify-content: flex-end; }

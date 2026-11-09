@@ -1,0 +1,26 @@
+[
+  {
+    "company_id": "northwind",
+    "id": "sample-northwind",
+    "url": "https://boards.greenhouse.io/northwind/jobs/1000001",
+    "description": "Senior Full Stack Engineer. This synthetic position develops React and TypeScript interfaces, Node.js APIs and PostgreSQL data workflows. The team maintains an established reporting service, tests incremental upgrades and documents operating constraints. This is fictional offline test evidence, not an actual vacancy.",
+    "confirmed_at": "2026-09-05T12:00:00Z",
+    "compensation": "Historical salary $170,000\u2013$210,000; current base pay not published."
+  },
+  {
+    "company_id": "bluepine",
+    "id": "sample-bluepine",
+    "url": "https://boards.greenhouse.io/bluepine/jobs/1000001",
+    "description": "Senior Full Stack Engineer. This synthetic position develops React and TypeScript interfaces, Node.js APIs and PostgreSQL data workflows. The team maintains an established reporting service, tests incremental upgrades and documents operating constraints. This is fictional offline test evidence, not an actual vacancy.",
+    "confirmed_at": "2026-09-05T12:00:00Z",
+    "compensation": "$150,000\u2013$205,000 USD annual base."
+  },
+  {
+    "company_id": "larkspur",
+    "id": "sample-larkspur",
+    "url": "https://boards.greenhouse.io/larkspur/jobs/1000001",
+    "description": "Senior Full Stack Engineer. This synthetic position develops React and TypeScript interfaces, Node.js APIs and PostgreSQL data workflows. The team maintains an established reporting service, tests incremental upgrades and documents operating constraints. This is fictional offline test evidence, not an actual vacancy.",
+    "confirmed_at": "2026-09-05T12:00:00Z",
+    "compensation": "$160,000\u2013$250,000 USD annual base in CA, CT; $150,000\u2013$240,000 USD annual base in CO, HI."
+  }
+]

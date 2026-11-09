@@ -1,0 +1,59 @@
+{
+  "last_scan_completed": "2026-09-05T12:00:00Z",
+  "active_company_ids": [
+    "northwind",
+    "bluepine",
+    "larkspur",
+    "quarry"
+  ],
+  "current_opening_keys": [
+    "northwind:sample-northwind",
+    "bluepine:sample-bluepine",
+    "larkspur:sample-larkspur"
+  ],
+  "seen_jobs": {
+    "northwind:sample-northwind": {
+      "first_seen": "2026-09-05",
+      "last_seen": "2026-09-05"
+    },
+    "bluepine:sample-bluepine": {
+      "first_seen": "2026-09-05",
+      "last_seen": "2026-09-05"
+    },
+    "larkspur:sample-larkspur": {
+      "first_seen": "2026-09-05",
+      "last_seen": "2026-09-05"
+    },
+    "northwind:historical": {}
+  },
+  "company_results": [
+    {
+      "company_id": "northwind",
+      "company": "Northwind Labs",
+      "result": "SUCCESS",
+      "notes": "Synthetic source confirmed.",
+      "sources": []
+    },
+    {
+      "company_id": "bluepine",
+      "company": "Bluepine Software",
+      "result": "SUCCESS",
+      "notes": "Synthetic source confirmed.",
+      "sources": []
+    },
+    {
+      "company_id": "larkspur",
+      "company": "Larkspur Health",
+      "result": "SUCCESS",
+      "notes": "Synthetic source confirmed.",
+      "sources": []
+    },
+    {
+      "company_id": "quarry",
+      "company": "Quarry Analytics",
+      "result": "FAILED",
+      "notes": "Synthetic read failed.",
+      "sources": []
+    }
+  ]
+}

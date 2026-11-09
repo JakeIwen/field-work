@@ -1,0 +1,61 @@
+/* Settings page: a readable content column with a section index beside it on wide screens. */
+.settings-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; align-items: start; }
+.settings-sections { display: grid; gap: 14px; min-width: 0; max-width: 1120px; }
+.settings-section { min-width: 0; scroll-margin-top: 16px; outline: 0; }
+.settings-section:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
+.settings-section-toggle { display: flex; gap: 6px; align-items: center; color: inherit; font: inherit; text-align: left; }
+.settings-section-toggle svg { flex-shrink: 0; }
+.settings-section .form-stack { gap: 8.25px; }
+.settings-section .button { font-size: 0.785714rem; }
+.settings-section .gmail-panel { margin-bottom: 0; }
+.settings-gmail { display: grid; gap: 14px; }
+.settings-placeholder { padding: 11px 12.65px; }
+
+.settings-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.settings-nav ul { display: contents; list-style: none; margin: 0; padding: 0; }
+.settings-nav-link {
+  appearance: none; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted);
+  font: inherit; font-size: 0.785714rem; padding: 4px 10px; cursor: pointer; white-space: nowrap;
+}
+.settings-nav-link:hover { background: var(--surface-hover); color: var(--ink); }
+.settings-nav-link.active { background: var(--surface-selected); color: var(--ink); border-color: var(--control-border); }
+.settings-nav-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+@media (min-width: 1251px) {
+  .settings-layout { grid-template-columns: 200px minmax(0, 1fr); gap: 24px; }
+  .settings-nav { position: sticky; top: 16px; flex-direction: column; flex-wrap: nowrap; gap: 0; }
+  .settings-nav ul { display: flex; flex-direction: column; gap: 2px; }
+  .settings-nav-link {
+    display: block; width: 100%; text-align: left; border: 0; border-left: 2px solid transparent; border-radius: 0 6px 6px 0;
+    background: none; padding: 6px 10px; white-space: normal;
+  }
+  .settings-nav-link.active { border-left-color: var(--primary); background: var(--surface-selected); }
+}
+
+.schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; }
+.schedule-row { position: relative; }
+.schedule-legend-help { position: absolute; top: -14px; right: 8px; background: var(--surface); }
+
+.greenhouse-pull-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; }
+.greenhouse-pull-field { display: grid; grid-template-rows: subgrid; grid-row: span 3; min-width: 0; }
+.greenhouse-pull-field .heading-help { margin: 0; align-items: center; }
+.greenhouse-pull-field label { font-size: 0.785714rem; font-weight: 600; color: var(--ink); }
+.greenhouse-pull-field input { width: 100%; min-width: 0; }
+@media (max-width: 640px) {
+  .greenhouse-pull-fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+.settings-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+.settings-tool { display: flex; flex-direction: column; gap: 8px; min-width: 0; border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+.settings-tool h3 { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 0.857143rem; }
+.settings-tool p { margin: 0; }
+.settings-tool .button { align-self: flex-start; margin-top: auto; }
+.settings-tool .source { margin: 0; }
+
+.settings-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 0 24px; }
+.settings-facts .field { margin-bottom: 8px; }
+
+.schedule-row > legend { display: flex; align-items: center; gap: 4px; }
+.fit-criteria-fields > .fit-criteria-field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.fit-criteria-label { display: flex; align-items: center; gap: 4px; min-height: 28px; font-size: 0.714286rem; font-weight: 600; color: var(--ink); }
+.fit-criteria-label label { cursor: pointer; }

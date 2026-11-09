@@ -1,0 +1,46 @@
+.preparation-live {
+  display: inline;
+}
+
+.preparation-live .info-tooltip-button {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.preparation-live-detail {
+  color: var(--muted);
+}
+
+.preparation-activity-details {
+  display: grid;
+  gap: 4px;
+  margin: 6px 0;
+  font-size: 0.85rem;
+}
+
+.preparation-activity-details > p {
+  margin: 0;
+}
+
+.preparation-activity-details ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.preparation-activity-details li {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  max-width: 16rem;
+}
+
+.preparation-activity-details li.is-current {
+  font-weight: 600;
+}
+
+.preparation-activity-disclosure > summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

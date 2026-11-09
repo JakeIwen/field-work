@@ -1,0 +1,26 @@
+.message-model-picker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.message-model-picker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.message-model-picker .letter-picker {
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .message-model-picker {
+    flex: 1 1 100%;
+  }
+}

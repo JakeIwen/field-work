@@ -1,0 +1,6 @@
+.reload-banner-content { flex: 1; min-width: 0; }
+.reload-banner-content ul { margin: 4px 0 0; padding-left: 18px; max-height: 180px; overflow: auto; }
+.reload-banner-content li { overflow-wrap: anywhere; }
+
+button.reload-app-button.reload-pending { background: var(--danger-bg); color: var(--danger-text); border: 1px solid var(--danger-border); }
+button.reload-app-button.reload-pending:hover { background: var(--danger-bg); color: var(--danger-text); }

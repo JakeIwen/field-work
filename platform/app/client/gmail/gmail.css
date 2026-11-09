@@ -1,0 +1,31 @@
+.gmail-panel { margin-bottom: 18px; }
+.gmail-panel h2 { display: flex; align-items: center; gap: 8px; }
+.gmail-reply-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.gmail-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.gmail-reply { border-top: 1px solid var(--border); padding: 18px 0; min-width: 0; }
+.gmail-reply h3, .gmail-reply p { overflow-wrap: anywhere; margin: 10px 0; }
+.gmail-excerpt { white-space: pre-wrap; }
+.gmail-error { margin: 12px 20px; color: var(--danger); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.gmail-panel details li { margin: 10px 0; }
+.gmail-panel input[type="file"] { max-width: 100%; }
+
+.gmail-connection-settings > summary { cursor: pointer; padding: 12px 0; }
+
+.gmail-preferences { display: flex; flex-direction: column; gap: 10px; margin: 4px 0 0; padding: 0; border: 0; min-width: 0; }
+.gmail-preferences > legend { padding: 0; margin-bottom: 2px; font-size: 0.857143rem; font-weight: 600; }
+.gmail-preference { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.gmail-preference .checkbox-label { font-size: 0.785714rem; }
+.gmail-preference p { margin: 0 0 0 22px; }
+
+.gmail-scan-status { display: grid; gap: 3px; }
+.gmail-scan-status p { margin: 0; }
+.gmail-scan-primary { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.gmail-panel-compact { margin-bottom: 10px; }
+.gmail-compact-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; padding: 9px 12.65px; }
+.gmail-compact-row h2 { margin: 0; font-size: 0.857143rem; white-space: nowrap; }
+.gmail-compact-row .gmail-scan-status { flex: 1 1 280px; }
+.gmail-compact-row .gmail-scan-status.compact { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; }
+.gmail-scan-status.compact .gmail-scan-primary { flex-wrap: nowrap; white-space: nowrap; }
+.gmail-compact-row .gmail-actions { margin-left: auto; }
+.gmail-preference-label label { cursor: pointer; }
+.gmail-compact-row > p { margin: 0; }

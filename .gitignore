@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.agent/
+/.claude/worktrees/
+node_modules/
+dist/
+.local/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+/tmp/
+
+# Raw careers-scan captures are retained locally; keep reports and posting snapshots.
+/company_careers/research/scans/*/evidence/*.json.gz
+
+# Reproducible resume validation screenshots; keep resume sources and PDFs.
+/source_master_template/**/validation/*.png
+
+# Playwright MCP console logs and page snapshots from browser sessions.
+/.playwright-mcp/

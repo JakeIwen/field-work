@@ -1,0 +1,175 @@
+/* UI colors belong here or in theme-kit/palette.css. PDF paper and its
+   transparent text layer deliberately keep their original colors; never invert
+   document or screenshot content.
+
+   Themes: four knobs drive the oklch tokens. The role tokens (--paper,
+   --surface, --ink, --primary and the rest) come from theme-kit's shared
+   palette, imported below, so a theme looks the same in the owner's other apps.
+   This file holds what only Fieldwork has: the sidebar and toast tokens, the
+   status hexes and the knob defaults. The active theme sets the knobs inline
+   on <html> (appearance/palette.ts); the defaults are Sage's, the fallback
+   before any script runs, and shared/palette.ts lists the same ones. Hex
+   tokens stay fixed across themes: statuses keep their meaning and PDF colors
+   their pixels. */
+@import "theme-kit/palette.css";
+
+:root {
+  --hue-neutral: 125;
+  --hue-brand: 160;
+  --hue-accent: 75;
+  --chroma: 1;
+  /* The sidebar logo keeps the Rosewood Slate soft-mode tile color (#e5b2c6)
+     whatever the theme or mode; index.html's favicon uses the same hex on the
+     Rosewood Slate dark sidebar (#273239) (owner, 2026-11-05). */
+  --brand-mark: oklch(0.815 0.0644 353);
+}
+
+:root {
+  --success-bg: #e3ecd8;
+  --success-text: #36572c;
+  --amber: #775318;
+  --warning-bg: #f6ecd5;
+  --warning-border: #cbb578;
+  --danger-bg: #f8e6e1;
+  --danger-text: #973d31;
+  --danger-border: #c48277;
+  --info-bg: #e1ecee;
+  --info-text: #365e6b;
+  --sidebar-count-overlay: #ffffff17;
+  --toast-close-hover: #ffffff1f;
+  --pdf-paper: #fff;
+  --pdf-selection: #9fbde780;
+  --border: var(--line);
+  --amber-text: var(--amber);
+  --danger: var(--danger-text);
+}
+/* Re-evaluate on theme-kit's swatch probe (.theme-probe): inherited tokens would
+   already contain the active page's knobs rather than the candidate's. */
+:root, .theme-probe[data-theme] {
+  --sidebar-bg: oklch(0.338 calc(0.045 * var(--chroma)) calc(var(--hue-brand) + 22));
+  --sidebar-ink: oklch(0.921 calc(0.023 * var(--chroma)) calc(var(--hue-neutral) + 1));
+  --sidebar-muted: oklch(0.83 calc(0.034 * var(--chroma)) calc(var(--hue-neutral) + 15));
+  --sidebar-line: oklch(0.499 calc(0.044 * var(--chroma)) calc(var(--hue-brand) + 2));
+  --sidebar-hover: oklch(0.388 calc(0.048 * var(--chroma)) calc(var(--hue-brand) + 17));
+  --sidebar-active: oklch(0.916 calc(0.031 * var(--chroma)) calc(var(--hue-neutral) - 2));
+  --sidebar-active-ink: oklch(0.365 calc(0.053 * var(--chroma)) calc(var(--hue-brand) - 1));
+  --sidebar-count: oklch(0.855 calc(0.043 * var(--chroma)) calc(var(--hue-neutral) + 1));
+  --sidebar-mark: oklch(0.815 calc(0.056 * var(--chroma)) calc(var(--hue-neutral) - 7));
+  --toast-bg: oklch(0.386 calc(0.053 * var(--chroma)) calc(var(--hue-brand) + 7));
+  --toast-ink: oklch(0.97 calc(0.009 * var(--chroma)) calc(var(--hue-neutral) - 5));
+  --toast-focus: oklch(0.89 calc(0.068 * var(--chroma)) calc(var(--hue-accent) + 9));
+  --toast-shadow: oklch(0.33 calc(0.028 * var(--chroma)) calc(var(--hue-brand) + 32) / 15%);
+  --mobile-drawer-shadow: oklch(0.331 calc(0.043 * var(--chroma)) calc(var(--hue-brand) + 24) / 15%);
+  --bulk-bar-shadow: oklch(0.332 calc(0.062 * var(--chroma)) calc(var(--hue-brand) - 17) / 7%);
+}
+:root[data-theme="dark"] {
+  --success-bg: #35482e;
+  --success-text: #c5dfb0;
+  --amber: #edcb8e;
+  --warning-bg: #463d2c;
+  --warning-border: #958157;
+  --danger-bg: #4b3330;
+  --danger-text: #ffc0ad;
+  --danger-border: #ac796a;
+  --info-bg: #2e4248;
+  --info-text: #b3d8e1;
+}
+:root[data-theme="dark"], .theme-probe[data-theme="dark"] {
+  --sidebar-bg: oklch(0.31 calc(0.017 * var(--chroma)) calc(var(--hue-brand) - 8));
+  --sidebar-ink: oklch(0.928 calc(0.014 * var(--chroma)) var(--hue-neutral));
+  --sidebar-muted: oklch(0.814 calc(0.033 * var(--chroma)) calc(var(--hue-neutral) + 7));
+  --sidebar-line: oklch(0.465 calc(0.034 * var(--chroma)) calc(var(--hue-neutral) + 11));
+  --sidebar-hover: oklch(0.376 calc(0.029 * var(--chroma)) calc(var(--hue-neutral) + 12));
+  --sidebar-active: oklch(0.432 calc(0.037 * var(--chroma)) calc(var(--hue-neutral) + 9));
+  --sidebar-active-ink: oklch(0.947 calc(0.02 * var(--chroma)) calc(var(--hue-neutral) + 1));
+  --sidebar-count: oklch(0.384 calc(0.037 * var(--chroma)) calc(var(--hue-neutral) + 10));
+  --sidebar-mark: oklch(0.828 calc(0.052 * var(--chroma)) calc(var(--hue-neutral) - 1));
+  --toast-bg: oklch(0.893 calc(0.038 * var(--chroma)) calc(var(--hue-neutral) + 2));
+  --toast-ink: oklch(0.315 calc(0.042 * var(--chroma)) calc(var(--hue-brand) - 18));
+  --toast-focus: oklch(0.43 calc(0.061 * var(--chroma)) calc(var(--hue-brand) - 2));
+}
+
+::selection { background: var(--selection); color: var(--selection-ink); }
+body { background: var(--paper); color: var(--ink); }
+option { color: var(--ink); background: var(--surface); }
+input[type="radio"], progress { accent-color: var(--brand); }
+input:disabled, select:disabled, textarea:disabled {
+  color: var(--muted);
+  background: var(--surface-muted);
+  opacity: 1;
+}
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+.theme-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 600;
+}
+.theme-switch button:hover { color: var(--ink); background: var(--surface-hover); }
+.theme-switch button[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 1px 3px #00000024;
+}
+.theme-switch button:focus-visible { outline-offset: 1px; }
+/* The shared theme editor pane (theme-kit) takes its colors from these tokens. */
+theme-editor {
+  --te-bg: var(--surface);
+  --te-surface: var(--paper);
+  --te-hover: var(--surface-hover);
+  --te-selected: var(--surface-selected);
+  --te-field: var(--surface);
+  --te-text: var(--ink);
+  --te-muted: var(--muted);
+  --te-border: var(--line);
+  --te-control-border: var(--control-border);
+  --te-accent: var(--primary);
+  --te-focus: var(--focus);
+  --te-danger: var(--danger-text);
+  --te-shadow: -12px 0 32px var(--dialog-shadow);
+  --te-radius: 8px;
+  --te-z: 1200;
+}
+.sidebar :is(button, a):focus-visible { outline-color: var(--sidebar-mark); }
+
+/* Preserve meaning and readable text on tinted statuses and selected rows. */
+.badge.green, .green-text, .added { color: var(--success-text); }
+.badge.amber, .warning-text { color: var(--amber); }
+.badge.red, .removed, .error-text { color: var(--danger-text); }
+.badge.blue { color: var(--info-text); }
+.badge.green, .added { background: var(--success-bg); }
+.badge.amber { background: var(--warning-bg); }
+.badge.red, .removed { background: var(--danger-bg); }
+.badge.blue { background: var(--info-bg); }
+tr.selected, .openings-table tr.row-checked { background: var(--surface-selected); }
+.sidebar .nav-item.active, .sidebar .sidebar-bottom .nav-item.active { color: var(--sidebar-active-ink); }
+.chat-text, .source-text, .document-source pre { color: var(--ink); }
+.bookmark.saved { color: var(--brand); }
+.pdf-page-surface, .pdf-preview iframe { color-scheme: light; }
+
+/* Keep both labelled choices available on small screens without shrinking the
+   search input or crowding the navigation control. */
+@media (max-width: 1400px) { .topbar .connection { display: none; } }
+@media (max-width: 1150px) { .topbar .breadcrumb { display: none; } }
+@media (max-width: 760px) {
+  .topbar { flex-wrap: wrap; padding-block: 6px; }
+  .topbar .global-search { flex: 1; width: auto; min-width: 130px; }
+  .topbar .theme-switch { order: 5; margin-left: auto; }
+  .topbar .theme-editor-button { order: 5; }
+  .topbar .reload-app-button { order: 6; }
+}

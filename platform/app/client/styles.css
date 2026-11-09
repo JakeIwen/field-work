@@ -1,0 +1,14 @@
+@import "./styles/base.css";
+@import "./styles/overview.css";
+@import "./styles/records.css";
+@import "./styles/documents.css";
+@import "./styles/agents.css";
+@import "./styles/workspace.css";
+@import "./styles/responsive-wide.css";
+@import "./styles/responsive-mobile.css";
+@import "./styles/readability.css";
+@import "./styles/pdf.css";
+@import "./styles/conversations.css";
+@import "./styles/markdown.css";
+@import "./styles/opening-workflow.css";
+@import "./styles/validation.css";

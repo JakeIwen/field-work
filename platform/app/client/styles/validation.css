@@ -1,0 +1,37 @@
+/* Availability checks keep progress visible without blocking other work. */
+.page-actions { justify-content: flex-end; }
+.opening-validation { padding: 16px 20px; margin-bottom: 20px; }
+.opening-validation progress { width: 100%; margin-top: 12px; accent-color: var(--brand); }
+.opening-validation details { margin-top: 10px; }
+.validation-results { max-height: 360px; overflow: auto; padding-left: 20px; }
+.validation-results li { margin: 12px 0; }
+.validation-results li > span, .validation-results li > a { display: block; }
+
+.opening-title-link { color: inherit; text-decoration: none; }
+.opening-title-link:hover { text-decoration: underline; }
+.opening-title-link svg { display: inline; vertical-align: baseline; }
+.opening-primary-actions { margin: 0 0 12px; }
+.rescan-progress > div { flex: 1; min-width: 0; }
+.rescan-progress progress { display: block; width: 100%; margin: 8px 0; accent-color: var(--brand); }
+.rescan-result { flex: 1; min-width: 0; }
+.rescan-problems { margin: 4px 0 0; padding-left: 18px; }
+.rescan-problems code { display: block; overflow-wrap: anywhere; }
+
+.button.opening-generate-docs { min-height: 26px; padding: 4px 6px; gap: 4px; font-size: .65rem; white-space: nowrap; }
+.greenhouse-added { margin-top: .75rem; }
+.greenhouse-added a { display: block; margin-top: .4rem; }
+
+.pull-activity { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0; color: var(--ink); }
+.pull-activity-pane { min-width: 0; }
+.pull-activity-pane h3 { margin: 0 0 6px; font-size: inherit; }
+.pull-activity-scroll { height: 240px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); padding: 6px; }
+.pull-activity-scroll ol { list-style: none; margin: 0; padding: 0; }
+.pull-activity-scroll p { margin: 4px; }
+.pull-activity-line { display: flex; align-items: baseline; gap: 8px; padding: 5px; overflow-wrap: anywhere; }
+.pull-activity-line time { flex: none; font-variant-numeric: tabular-nums; font-size: .9em; }
+.pull-activity-line a { color: inherit; }
+.pull-activity-line.warning-text { background: var(--warning-bg); }
+.pull-activity-line.error-text { background: var(--danger-bg); }
+@media (max-width: 900px) {
+  .pull-activity { grid-template-columns: minmax(0, 1fr); }
+}

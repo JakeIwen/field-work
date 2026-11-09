@@ -1,0 +1,31 @@
+.pull-metrics { width: 100%; min-width: 0; color: var(--ink); }
+.pull-metrics-body { padding: 12px 0; min-width: 0; }
+.pull-metrics-toolbar, .pull-metrics-tabs, .pull-metrics-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pull-metrics-toolbar { justify-content: space-between; }
+.pull-metrics-tabs [aria-pressed="true"] { border-color: var(--primary); background: var(--surface-selected); }
+.pull-metrics-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 12px 0; }
+.pull-metrics-controls label { display: flex; flex-direction: column; gap: 4px; min-width: 0; max-width: 100%; }
+.pull-metrics-controls select { max-width: 320px; width: 100%; }
+.pull-metrics-search { display: flex; align-items: end; gap: 8px; max-width: 100%; }
+.pull-metrics-search input { min-width: 0; width: 100%; }
+.pull-metrics-controls .pull-metrics-checkbox { flex-direction: row; align-items: center; }
+.pull-metrics-checkbox input { width: auto; }
+.pull-metrics-groups { display: grid; gap: 8px; }
+.pull-metric-group { border: 1px solid var(--line); border-radius: 6px; padding: 10px; min-width: 0; background: var(--surface); }
+.pull-metric-group > summary { cursor: pointer; overflow-wrap: anywhere; }
+.pull-metric-count { color: var(--muted); font-size: .85em; margin-left: 12px; font-variant-numeric: tabular-nums; }
+.pull-metric-postings { list-style: none; padding: 0; margin: 8px 0; }
+.pull-metric-posting { padding: 12px 0; border-top: 1px solid var(--line); min-width: 0; overflow-wrap: anywhere; }
+.pull-metric-posting-heading { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.pull-metric-url { font-size: .85em; overflow-wrap: anywhere; }
+.pull-metrics-instructions p, .pull-metric-evidence dd { white-space: pre-wrap; overflow-wrap: anywhere; }
+.pull-metric-evidence { margin: 12px 0; padding: 12px; border: 1px solid var(--line); background: var(--surface-muted); border-radius: 6px; }
+.pull-metric-evidence dt { font-weight: 600; margin-top: 12px; }
+.pull-metric-evidence dd { margin: 4px 0 0; }
+.pull-metrics-pagination { margin-top: 12px; font-size: .85em; }
+@media (max-width: 600px) {
+  .pull-metrics-controls { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .pull-metrics-controls select { max-width: 100%; }
+  .pull-metrics-search label { flex: 1; }
+  .pull-metric-count { display: block; margin: 4px 0 0; }
+}

@@ -1,0 +1,449 @@
+/* App shell, Overview Today queue, Applications board/report and Settings additions.
+   Reuses the tokens and visual language from styles.css. */
+
+/* Toast */
+.toast-stack {
+  position: fixed;
+  bottom: 28px;
+  left: calc(50% + 120px);
+  transform: translateX(-50%);
+  z-index: 80;
+  width: min(560px, calc(100vw - 272px));
+  max-height: calc(100dvh - 56px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.toast-stack > .shell-toast {
+  position: static;
+  transform: none;
+  width: 100%;
+  flex: 0 0 auto;
+  pointer-events: auto;
+}
+.shell-toast {
+  gap: 6px;
+  padding-right: 4px;
+}
+.shell-toast > svg,
+.shell-toast .toast-close {
+  flex-shrink: 0;
+}
+.shell-toast .toast-content {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.shell-toast .app-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.shell-toast .app-link:focus-visible {
+  outline: 2px solid var(--toast-focus);
+  outline-offset: 2px;
+}
+.toast-links {
+  margin: 4px 0 0;
+  padding-left: 16px;
+}
+@media (max-width: 760px) {
+  .toast-stack {
+    left: 50%;
+    bottom: 18px;
+    width: calc(100vw - 32px);
+    max-height: calc(100dvh - 36px);
+  }
+}
+.shell-toast .toast-close {
+  color: var(--toast-ink);
+  width: 26px;
+  height: 26px;
+}
+.shell-toast .toast-close:hover {
+  background: var(--toast-close-hover);
+  color: var(--toast-ink);
+}
+.shell-toast .toast-close:focus-visible {
+  outline-color: var(--toast-focus);
+}
+
+/* Keyboard shortcut dialog */
+.shortcut-dialog {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 18px 50px var(--dialog-shadow);
+}
+.shortcut-dialog::backdrop {
+  background: var(--backdrop);
+}
+.shortcut-body {
+  padding: 14px 16px 16px;
+}
+.shortcut-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.shortcut-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.071429rem;
+  margin: 0;
+}
+.shortcut-body h3 {
+  font-size: 0.714286rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 12px 0 4px;
+}
+.shortcut-body > p {
+  margin: 4px 0 0;
+}
+.shortcut-list {
+  margin: 0;
+}
+.shortcut-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.785714rem;
+}
+.shortcut-list dt {
+  white-space: nowrap;
+}
+.shortcut-list dd {
+  margin: 0;
+  text-align: right;
+  color: var(--muted);
+}
+.shortcut-list kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 1px 5px;
+  border: 1px solid var(--control-border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--surface-muted);
+  font: inherit;
+  font-size: 0.714286rem;
+  text-align: center;
+}
+
+/* Overview: Today queue */
+.today-panel {
+  margin-bottom: 13.2px;
+}
+.today-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.today-list > li:last-child .action-row {
+  border-bottom: 0;
+}
+.action-row.today-row > .today-kind {
+  flex: 0 0 9.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.642857rem;
+  font-weight: 650;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.today-row > span:nth-child(2) {
+  min-width: 0;
+}
+.today-row small {
+  overflow-wrap: anywhere;
+}
+.today-flag {
+  align-self: flex-start;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  letter-spacing: 0.3px;
+}
+.today-row.overdue {
+  box-shadow: inset 3px 0 0 var(--danger-border);
+}
+.today-row.danger .today-kind {
+  color: var(--danger-text);
+}
+.today-row.warning .today-kind {
+  color: var(--amber);
+}
+.today-more {
+  padding: 8px 12.1px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 600px) {
+  .today-row {
+    flex-wrap: wrap;
+  }
+  .action-row.today-row > .today-kind {
+    flex-basis: 100%;
+    flex-direction: row;
+    gap: 6px;
+  }
+  .today-row > span:nth-child(2) {
+    flex: 1;
+  }
+}
+
+/* Applications: suggested next action */
+.suggested-action {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Applications: List | Board toggle */
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--control-border);
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.view-toggle > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4.95px 8px;
+  font-size: 0.714286rem;
+  color: var(--muted);
+  min-height: 32px;
+}
+.view-toggle > button + button {
+  border-left: 1px solid var(--control-border);
+}
+.view-toggle > button.selected {
+  background: var(--surface-selected);
+  color: var(--ink);
+  font-weight: 600;
+}
+.board-hint {
+  margin: 0;
+}
+
+/* Applications: board */
+.board-panel {
+  background: var(--surface-muted);
+}
+.kanban {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  align-items: flex-start;
+}
+.kanban-column {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 6px;
+  min-height: 120px;
+}
+.kanban-column.drop-target {
+  border-color: var(--control-border);
+  background: var(--surface-selected);
+}
+.kanban-column > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 4px 6px;
+  font-size: 0.714286rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kanban-column > h3 > span {
+  font-weight: 500;
+}
+.kanban-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.kanban-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 8px;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.kanban-card.selected {
+  border-color: var(--control-border);
+  background: var(--surface-selected);
+}
+.kanban-card.dragging {
+  opacity: 0.5;
+}
+.kanban-card .kanban-link {
+  min-width: 0;
+}
+.kanban-meta {
+  font-size: 0.714286rem;
+  overflow-wrap: anywhere;
+}
+.kanban-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+.kanban-stage {
+  font-size: 0.714286rem;
+  padding: 2px 18px 2px 4px;
+}
+.kanban-empty {
+  margin: 4px;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .kanban-column {
+    flex-basis: min(240px, 78vw);
+  }
+}
+
+/* Applications: outcomes by resume version */
+.variant-report {
+  margin-top: 13.2px;
+}
+.variant-report > summary {
+  padding: 11.55px 12.65px;
+  font-weight: 600;
+  font-size: 0.928571rem;
+  cursor: pointer;
+}
+.variant-report[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+.variant-report .panel-body > p:first-child {
+  margin-top: 0;
+}
+.variant-table td {
+  font-size: 0.785714rem;
+}
+.variant-applications > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.variant-applications ul {
+  margin: 4px 0 0;
+  padding-left: 16px;
+  min-width: 200px;
+}
+
+/* Settings additions */
+.schedule-row {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px 10px;
+  margin: 0;
+  min-width: 0;
+}
+.schedule-row > legend {
+  padding: 0 4px;
+  font-size: 0.857143rem;
+  font-weight: 600;
+}
+.schedule-row > p {
+  margin: 0 0 6px;
+}
+.schedule-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: 0.785714rem;
+}
+.checkbox-label,
+.schedule-interval {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+/* .form-stack > label stacks its content; a checkbox keeps its box beside the text. */
+.form-stack > label.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.785714rem;
+  color: var(--ink);
+}
+.schedule-interval input {
+  width: 5em;
+}
+.schedule-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 8px 0 0;
+  font-size: 0.714286rem;
+}
+.schedule-times dt {
+  color: var(--muted);
+}
+.schedule-times dd {
+  margin: 0;
+}
+.fit-criteria-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px 12px;
+}
+.fit-criteria-fields > label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.714286rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.fit-criteria-fields > label > .tiny {
+  font-weight: 400;
+}
+.fit-criteria-fields textarea {
+  font-size: 0.785714rem;
+  line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Application package: read-only list of the files Generate Docs attached. */
+.package-files { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; }
+.package-files li { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.package-files li > span { overflow-wrap: anywhere; }
+
+/* Application view: Generate Docs plus a one-line preparation status. */
+.preparation-line { margin: 0 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 14px; }
+.preparation-line-status { display: inline-flex; align-items: center; gap: 6px; }
+.preparation-line.is-stale .preparation-line-status { color: var(--amber-text); }
+.preparation-line.is-failed .preparation-line-status { color: var(--danger-text); }
+.preparation-line-details { flex-basis: 100%; }
+.preparation-line-details > summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+.preparation-line-details ul { padding-left: 20px; margin: 6px 0; }
+.preparation-line-details .error-text { margin: 6px 0; }

@@ -1,0 +1,103 @@
+/* Positioning matches PDF.js TextLayer's public style variables (Apache-2.0).
+   Only inert text spans overlay the canvas; no annotation or scripting layer. */
+.pdf-selectable-text {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  line-height: 1;
+  text-align: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+}
+.pdf-selectable-text :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+  user-select: text;
+}
+.pdf-selectable-text > :not(.markedContent),
+.pdf-selectable-text .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x))
+    scale(var(--min-font-size-inv));
+}
+.pdf-selectable-text .markedContent {
+  display: contents;
+}
+.pdf-selectable-text ::selection {
+  color: transparent;
+  background: var(--pdf-selection);
+}
+@media (max-width: 600px) {
+  .pdf-preview {
+    padding: 4.95px;
+  }
+  .pdf-toolbar {
+    padding: 4.4px;
+    gap: 2.75px;
+    flex-wrap: wrap;
+  }
+  .pdf-pagination {
+    gap: 0.55px;
+  }
+  .pdf-pagination > span {
+    font-size: 0.714286rem;
+  }
+  .pdf-toolbar .text-button {
+    font-size: 0.642857rem;
+  }
+  .pdf-toolbar .icon-button {
+    width: 24px;
+    height: 26px;
+  }
+  .draft-preview {
+    padding: 6.6px;
+  }
+}
+
+.pdf-canvas-host {
+  display: block;
+  overflow: auto;
+}
+.pdf-page-surface {
+  margin-inline: auto;
+}
+.pdf-toolbar .pdf-zoom {
+  font-size: 0.714286rem;
+  padding: 2.75px 11px 2.75px 3.85px;
+  background: var(--surface);
+  min-width: 72px;
+  margin-left: auto;
+  padding-right: 20px;
+}
+.pdf-toolbar .text-button {
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .pdf-toolbar .pdf-zoom {
+    font-size: 0.642857rem;
+    min-width: 63px;
+    padding: 2.75px;
+    padding-right: 20px;
+  }
+  .pdf-toolbar {
+    row-gap: 4.4px;
+  }
+  .draft-preview .pdf-toolbar > .text-button {
+    margin-left: auto;
+  }
+}
+

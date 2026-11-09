@@ -1,0 +1,30 @@
+[
+  {
+    "company_id": "northwind",
+    "company": "Northwind Labs",
+    "result": "SUCCESS",
+    "notes": "Synthetic source confirmed.",
+    "sources": []
+  },
+  {
+    "company_id": "bluepine",
+    "company": "Bluepine Software",
+    "result": "SUCCESS",
+    "notes": "Synthetic source confirmed.",
+    "sources": []
+  },
+  {
+    "company_id": "larkspur",
+    "company": "Larkspur Health",
+    "result": "SUCCESS",
+    "notes": "Synthetic source confirmed.",
+    "sources": []
+  },
+  {
+    "company_id": "quarry",
+    "company": "Quarry Analytics",
+    "result": "FAILED",
+    "notes": "Synthetic read failed.",
+    "sources": []
+  }
+]

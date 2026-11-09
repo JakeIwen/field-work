@@ -1,0 +1,14 @@
+.tunables-panel { display: grid; gap: 16px; min-width: 0; }
+.tunables-panel > .searchbox { width: 100%; min-width: 0; }
+.tunable-group { display: grid; gap: 8px; min-width: 0; }
+.tunable-group h3 { margin: 0; font-size: 0.928571rem; }
+.tunable-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(190px, 240px); gap: 4px 16px; align-items: center; border-bottom: 1px solid var(--line); padding: 8px 0; }
+.tunable-row > .heading-help { margin: 0; flex-wrap: wrap; min-width: 0; }
+.tunable-row label { font-weight: 500; overflow-wrap: anywhere; }
+.tunable-controls { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.tunable-controls input { width: 110px; min-width: 0; }
+.tunable-controls .text-button { margin-left: auto; }
+.tunable-error { grid-column: 1 / -1; margin: 0; color: var(--danger); overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .tunable-row { grid-template-columns: minmax(0, 1fr); }
+}

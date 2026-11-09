@@ -1,0 +1,31 @@
+/* Codex models: one table of request types with model and effort columns. */
+.codex-model-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+/* Reset the global data-table styles (uppercase muted th, td borders, row hover) for this settings table. */
+.codex-model-table th, .codex-model-table td {
+  text-align: left; vertical-align: top; padding: 5px 12.65px; min-width: 0; background: none; border: 0;
+  text-transform: none; letter-spacing: 0; white-space: normal;
+}
+.codex-model-table tbody tr:hover { background: none; }
+.codex-model-table .codex-model-choice > * { border-top: 1px solid var(--line); }
+.codex-model-table thead th {
+  font-size: 0.642857rem; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted);
+  padding: 7px 12.65px; background: var(--surface-muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.codex-model-group th { padding: 14px 12.65px 2px; font-size: 0.785714rem; font-weight: 600; color: var(--ink); }
+.codex-model-choice th { font-size: 0.785714rem; font-weight: 500; color: var(--ink); padding-top: 11px; overflow-wrap: anywhere; }
+.codex-model-choice p { margin: 6px 0 0; }
+.codex-model-table tbody:last-child tr:last-child > * { padding-bottom: 14px; }
+.codex-col-model { width: 13rem; }
+.codex-col-effort { width: 8.75rem; }
+.codex-model-key { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: center; }
+.codex-model-key > span { font-weight: 600; }
+
+@media (max-width: 760px) {
+  .codex-model-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .codex-model-table, .codex-model-table tbody { display: block; }
+  .codex-model-table tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 8px; padding: 0 12.65px; }
+  .codex-model-table th, .codex-model-table td { padding: 4px 0; }
+  .codex-model-group th, .codex-model-choice th { grid-column: 1 / -1; }
+  .codex-model-group th { padding-top: 14px; }
+  .codex-model-choice th { padding: 10px 0 0; }
+}

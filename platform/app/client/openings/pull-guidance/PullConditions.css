@@ -1,0 +1,7 @@
+.pull-conditions { border: 1px solid var(--line); border-radius: 6px; padding: 12px; min-width: 0; }
+.pull-conditions legend { padding: 0 6px; }
+.pull-conditions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; align-items: start; }
+.pull-conditions-grid > div { min-width: 0; }
+.pull-conditions input[type="number"] { width: 88px; max-width: 100%; }
+.pull-conditions-input-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pull-conditions-grid .heading-help { align-items: start; }

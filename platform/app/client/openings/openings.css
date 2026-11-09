@@ -1,0 +1,374 @@
+/* Openings list and Opening detail additions: bulk selection, keyboard focus,
+   duplicate-title references and the in-Opening application block. */
+
+.opening-bulk-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7.7px;
+  margin: 0 0 9.35px;
+  padding: 6.6px 11px;
+  background: var(--surface-selected);
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--bulk-bar-shadow);
+  font-size: 0.785714rem;
+  color: var(--ink);
+}
+.opening-bulk-count {
+  margin-right: 4.4px;
+}
+.opening-bulk-count strong {
+  font-weight: 650;
+}
+.opening-bulk-bar .text-button {
+  margin-left: auto;
+}
+
+.openings-table tr.row-checked {
+  background: var(--surface-selected);
+}
+.openings-table tr.row-focus {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+.openings-table th.checkbox-cell input {
+  width: 12px;
+  height: 12px;
+  margin: 2.75px 0;
+}
+
+.opening-dup-ref {
+  font-size: 0.642857rem;
+  font-weight: 450;
+  color: var(--muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.opening-application {
+  margin-top: 4.4px;
+}
+
+.opening-research-details .field > div,
+.opening-research-details .research-text p {
+  line-height: 1.5;
+}
+.opening-research-details .research-text {
+  white-space: normal;
+}
+.opening-research-details .research-text p {
+  margin: 0 0 0.85em;
+  font-size: inherit;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.opening-research-details .research-text p:last-child { margin-bottom: 0; }
+.opening-research-details .research-bullets {
+  margin: 0 0 0.85em;
+  padding-left: 1.25em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.opening-research-details .research-bullets:last-child { margin-bottom: 0; }
+.opening-research-details .research-bullets li + li { margin-top: 0.3em; }
+.opening-company-contact,
+.opening-questions,
+.opening-application,
+.opening-saved-files {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.opening-company-contact > summary,
+.opening-questions > summary,
+.opening-application > summary,
+.opening-saved-files > summary { cursor: pointer; font-weight: 600; }
+.opening-saved-files > div { padding: 7px 0; overflow-wrap: anywhere; }
+.opening-company-contact > div,
+.opening-questions-body,
+.opening-application-body { padding-top: 8px; }
+.opening-company-contact p { white-space: pre-line; }
+.opening-application-head {
+  display: flex;
+  align-items: center;
+  gap: 7.7px;
+  margin-bottom: 5.5px;
+}
+.opening-application-head h3 {
+  margin: 0;
+}
+.opening-application-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 7.7px;
+  align-items: end;
+}
+.opening-application-fields > label {
+  display: flex;
+  flex-direction: column;
+  gap: 3.85px;
+  font-size: 0.714286rem;
+  color: var(--muted);
+}
+.opening-application-fields input {
+  min-height: 32px;
+}
+
+.autofill-heading, .autofill-version-row { display: flex; align-items: center; gap: 8px; }
+.autofill-heading h3, .autofill-version-row p { margin: 0; }
+.autofill-disclosure { margin: 8px 0 0; color: var(--muted); }
+.autofill-version-row { margin: 10px 0; align-items: flex-start; }
+.autofill-version-row > button { flex: 0 0 auto; }
+
+.qa-prep-runs {
+  padding: 5.5px 12.65px 9.35px;
+  border-top: 1px solid var(--line);
+}
+.qa-prep-runs > .text-button {
+  font-size: 0.714286rem;
+}
+.qa-prep-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4.4px;
+}
+.qa-prep-row > .task-row {
+  flex: 1;
+  min-width: 0;
+}
+.qa-prep-row > .opening-link {
+  flex: none;
+  font-size: 0.642857rem;
+  margin-top: 9.35px;
+  margin-right: 8.25px;
+}
+
+@media (max-width: 760px) {
+  .opening-selected > .opening-bulk-bar {
+    display: none;
+  }
+  .opening-bulk-bar .text-button {
+    margin-left: 0;
+  }
+}
+
+/* Compact Openings intake: one row of controls, collapsed run summaries below. */
+.opening-intake {
+  margin-bottom: 9.35px;
+  padding: 6.6px 11px;
+  overflow: visible;
+}
+.intake-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7.7px;
+}
+.intake-add {
+  display: flex;
+  flex: 1 1 320px;
+  gap: 6.6px;
+  min-width: 0;
+}
+.intake-add input {
+  flex: 1;
+  min-width: 0;
+}
+.intake-pull {
+  display: flex;
+  flex: 1 1 260px;
+  flex-wrap: wrap;
+  gap: 6.6px;
+}
+.intake-pull input {
+  width: 4.2rem;
+}
+.intake-row .button {
+  white-space: nowrap;
+}
+.intake-divider {
+  align-self: stretch;
+  width: 1px;
+  margin: 3.3px 2.2px;
+  background: var(--line);
+}
+.intake-error {
+  margin: 4.4px 0 0;
+  color: var(--danger-text);
+  overflow-wrap: anywhere;
+}
+.intake-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.3px 13.2px;
+  margin-top: 5.5px;
+}
+.intake-status:empty {
+  display: none;
+}
+.intake-status svg {
+  display: inline;
+  vertical-align: -2px;
+}
+.intake-summary > summary {
+  cursor: pointer;
+}
+.intake-summary > summary progress {
+  width: 72px;
+  height: 7px;
+  margin-left: 6.6px;
+  vertical-align: middle;
+  accent-color: var(--brand);
+}
+.intake-summary[open] {
+  flex-basis: 100%;
+}
+.intake-body {
+  margin: 4.4px 0 5.5px 15.4px;
+  color: var(--ink);
+}
+.intake-body p {
+  margin: 3.3px 0;
+  overflow-wrap: anywhere;
+}
+.intake-body > progress {
+  display: block;
+  width: 100%;
+  margin: 5.5px 0;
+  accent-color: var(--brand);
+}
+.intake-body .validation-results {
+  max-height: 260px;
+}
+.intake-links,
+.intake-import {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.3px 9.9px;
+}
+.intake-body .intake-links {
+  margin: 3.3px 0;
+}
+.intake-import {
+  overflow-wrap: anywhere;
+}
+.intake-import-title {
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .intake-divider {
+    display: none;
+  }
+  .intake-add {
+    flex-basis: 100%;
+  }
+}
+
+.opening-application-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.opening-material-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--control-border);
+  border-radius: 7px;
+  background: var(--surface);
+}
+.opening-material-controls.materials-need-attention {
+  color: var(--amber);
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+}
+.material-warning-summary { display: flex; align-items: center; min-height: max(32px, 2.5em); gap: 6px; text-align: left; font-size: 12px; line-height: 1.25; }
+.material-warning-summary .material-warning { margin-left: 0; }
+.material-warning-summary > .info-tooltip-button { width: 32px; height: 32px; }
+.material-warning-summary > span { min-width: 0; overflow-wrap: anywhere; }
+.material-warning-summary > svg { margin: 5px; }
+.opening-material-controls > .text-button { align-self: flex-end; }
+.opening-material-controls .opening-material-control > .button { flex: 1; justify-content: space-between; }
+.opening-material-controls .opening-material-control > .icon-button { flex: 0 0 28px; }
+.opening-material-control { display: inline-flex; align-items: center; gap: 3px; }
+.opening-material-control > .button { display: inline-flex; align-items: center; gap: 7px; }
+.opening-material-controls .material-warning { color: var(--amber); flex: 0 0 auto; }
+.opening-application-meta { margin-top: 8px; }
+
+/* Stretch the real route link across each row; controls keep their own actions. */
+.openings-table tbody tr { position: relative; }
+.openings-table .table-role::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.openings-table .table-role:focus-visible::after { outline: 2px solid var(--focus); outline-offset: -2px; }
+.openings-table .checkbox-cell input, .openings-table .opening-row-actions button { position: relative; z-index: 2; }
+.button.opening-generate-docs.materials-need-attention { color: var(--amber); background: var(--warning-bg); border-color: var(--warning-border); }
+
+.opening-detail-panel { container-type: inline-size; }
+/* The close link sits outside the heading grid so it can stay pinned while the
+   panel (or, below 1050px, the page) scrolls; the zero height leaves the
+   heading's third column as its resting spot. */
+.opening-detail-close { position: sticky; top: 0; z-index: 5; height: 0; display: flex; justify-content: flex-end; padding-right: 12.65px; }
+.opening-detail-close > .icon-button { margin-top: 12px; background: var(--surface); }
+.opening-detail-close > .icon-button:hover { background: var(--surface-hover); }
+/* Where the panel stops scrolling itself (responsive-wide.css), overflow: auto would still
+   make it the sticky scroller; clip keeps the rounded corners without capturing it. */
+@media (max-width: 1050px) { .detail-panel.opening-detail-panel { overflow: clip; } }
+.opening-detail-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 28px;
+  /* The last row absorbs any height the materials box adds beyond the left column. */
+  grid-template-rows: auto auto auto auto auto 1fr;
+  align-items: start;
+  column-gap: 12px;
+  row-gap: 6px;
+  padding-top: 12px;
+}
+.opening-detail-heading > .badge { grid-column: 1; grid-row: 1; justify-self: start; }
+.opening-detail-heading > .icon-button { grid-column: 3; grid-row: 1; }
+.opening-materials-slot { grid-column: 2; grid-row: 1 / 7; width: 248px; max-width: calc(100% - 24px); margin: 12px; }
+.opening-detail-heading > .company-link { grid-column: 1; grid-row: 2; justify-self: start; }
+.opening-detail-heading > h2 { grid-column: 1; grid-row: 3; margin: 0; overflow-wrap: anywhere; }
+.opening-detail-heading > .badge-row { grid-column: 1; grid-row: 4; }
+/* The availability and application lines sit left of the materials box (owner, 2026-11-08);
+   their segments stay whole, so a narrow column splits each line at its separator. */
+.opening-detail-heading > .opening-validation-summary { grid-column: 1; grid-row: 5; }
+.opening-detail-heading > .opening-application-meta { grid-column: 1; grid-row: 6; }
+.opening-meta-segment { white-space: nowrap; }
+@container (max-width: 480px) {
+  .opening-detail-heading > .opening-validation-summary { grid-column: 1 / -1; grid-row: 6; }
+  .opening-detail-heading > .opening-application-meta { grid-column: 1 / -1; grid-row: 7; }
+  .opening-detail-heading { grid-template-columns: minmax(0, 1fr) 28px; }
+  .opening-materials-slot { grid-column: 1; grid-row: 1; justify-self: end; }
+  .opening-detail-heading > .icon-button { grid-column: 2; }
+  .opening-detail-heading > .badge { grid-column: 1 / -1; grid-row: 2; }
+  .opening-detail-heading > .company-link { grid-column: 1 / -1; grid-row: 3; }
+  .opening-detail-heading > h2 { grid-column: 1 / -1; grid-row: 4; }
+  .opening-detail-heading > .badge-row { grid-column: 1 / -1; grid-row: 5; }
+}
+
+.opening-age-filter { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; }
+.opening-age-filter label { display: flex; flex-direction: column; gap: 4px; font-size: 0.714286rem; color: var(--muted); }
+.opening-age-filter input { width: 5rem; }
+
+/* Place save and dismiss side by side above the document count. */
+.openings-table .opening-row-actions { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.opening-row-actions-top { display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+@media (max-width: 1439px) {
+  .table-scroll > .openings-table { width: 100%; min-width: 0; }
+  .table-scroll > .openings-table .opening-opportunity-col { width: 28%; }
+}
+
+.opening-results-count { flex: 0 0 auto; white-space: nowrap; }
+
+.opening-empty-visibility { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+.opening-empty-visibility > span { flex-basis: 100%; }
+
+.preparation-progress-heading { display: flex; align-items: center; gap: 6px; }
+
+.opening-age-control { display: flex; flex-direction: column; gap: 4px; font-size: 0.714286rem; color: var(--muted); }
+.opening-age-label { display: flex; align-items: center; gap: 4px; min-height: 20px; }

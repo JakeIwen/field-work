@@ -1,0 +1,198 @@
+{
+  "scan_timestamp": "2026-09-05T12:00:00Z",
+  "openings": [
+    {
+      "id": "northwind:sample-northwind",
+      "company_id": "northwind",
+      "job_id": "sample-northwind",
+      "company": "Northwind Labs",
+      "title": "Senior Full Stack Engineer",
+      "url": "https://boards.greenhouse.io/northwind/jobs/1000001",
+      "technical_fit": "High",
+      "remote_fit": "Medium",
+      "wlb_outlook": "Uncertain",
+      "location": "US remote, approved states require confirmation.",
+      "compensation": "Historical salary $170,000–$210,000; current base pay not published.",
+      "why": "React, Node.js and relational data. Synthetic posting for offline verification.",
+      "concerns": "Working hours and travel are unverified.",
+      "requirements": "React, TypeScript, Node.js and PostgreSQL",
+      "wlb_evidence": "",
+      "status": "NEW",
+      "first_seen": "2026-09-05",
+      "last_confirmed_open": "2026-09-05",
+      "postingStatus": "confirmed open at last scan",
+      "sourcePath": "company_careers/current_openings.md",
+      "sourceDate": "2026-09-05T12:00:00Z",
+      "hash": "c2d94e969ef588229a1400ee90d29009746ff521decae91891f861b953ed4846",
+      "deadline": null,
+      "deadlineProvenance": null,
+      "postingFingerprint": "",
+      "lastCheckedAt": null,
+      "verificationNotes": "",
+      "reviewRequired": false,
+      "assessmentDate": null,
+      "salaryBands": [],
+      "salaryKind": "historical / estimate",
+      "recruiterQuestions": [
+        {
+          "question": "What hours did this team actually work in a typical week and during its last busy period?",
+          "evidence": "Actual weekly hours are not documented.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "How often is the on-call rotation, how many after-hours pages occurred recently, and what recovery time is provided?",
+          "evidence": "Working hours and travel are unverified.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "Which US states may I work from, and what notice or approval is required when my physical work location changes?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "What travel is required each year, for how long, and how much scheduling flexibility is available?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "What published base salary band applies to my work location and senior level, separate from equity and bonus?",
+          "evidence": "Historical salary $170,000–$210,000; current base pay not published.",
+          "sourcePath": "company_careers/current_openings.md"
+        }
+      ]
+    },
+    {
+      "id": "bluepine:sample-bluepine",
+      "company_id": "bluepine",
+      "job_id": "sample-bluepine",
+      "company": "Bluepine Software",
+      "title": "Senior Full Stack Engineer",
+      "url": "https://boards.greenhouse.io/bluepine/jobs/1000001",
+      "technical_fit": "High",
+      "remote_fit": "Medium",
+      "wlb_outlook": "Uncertain",
+      "location": "US remote, approved states require confirmation.",
+      "compensation": "$150,000–$205,000 USD annual base.",
+      "why": "React, Node.js and relational data. Synthetic posting for offline verification.",
+      "concerns": "Working hours and travel are unverified.",
+      "requirements": "React, TypeScript, Node.js and PostgreSQL",
+      "wlb_evidence": "",
+      "status": "NEW",
+      "first_seen": "2026-09-05",
+      "last_confirmed_open": "2026-09-05",
+      "postingStatus": "confirmed open at last scan",
+      "sourcePath": "company_careers/current_openings.md",
+      "sourceDate": "2026-09-05T12:00:00Z",
+      "hash": "fe54876c4c53e99bc937036f14fcb577b55f6168b4ec45caabb8737a3d3ad168",
+      "deadline": null,
+      "deadlineProvenance": null,
+      "postingFingerprint": "",
+      "lastCheckedAt": null,
+      "verificationNotes": "",
+      "reviewRequired": false,
+      "assessmentDate": null,
+      "salaryBands": [
+        {
+          "text": "$150,000–$205,000 USD annual base.",
+          "min": 150000,
+          "max": 205000,
+          "currency": "USD",
+          "basis": "published base"
+        }
+      ],
+      "salaryKind": "published",
+      "recruiterQuestions": [
+        {
+          "question": "What hours did this team actually work in a typical week and during its last busy period?",
+          "evidence": "Actual weekly hours are not documented.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "How often is the on-call rotation, how many after-hours pages occurred recently, and what recovery time is provided?",
+          "evidence": "Working hours and travel are unverified.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "Which US states may I work from, and what notice or approval is required when my physical work location changes?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "What travel is required each year, for how long, and how much scheduling flexibility is available?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        }
+      ]
+    },
+    {
+      "id": "larkspur:sample-larkspur",
+      "company_id": "larkspur",
+      "job_id": "sample-larkspur",
+      "company": "Larkspur Health",
+      "title": "Senior Full Stack Engineer",
+      "url": "https://boards.greenhouse.io/larkspur/jobs/1000001",
+      "technical_fit": "High",
+      "remote_fit": "Medium",
+      "wlb_outlook": "Uncertain",
+      "location": "US remote, approved states require confirmation.",
+      "compensation": "$160,000–$250,000 USD annual base in CA, CT; $150,000–$240,000 USD annual base in CO, HI.",
+      "why": "React, Node.js and relational data. Synthetic posting for offline verification.",
+      "concerns": "Working hours and travel are unverified.",
+      "requirements": "React, TypeScript, Node.js and PostgreSQL",
+      "wlb_evidence": "",
+      "status": "NEW",
+      "first_seen": "2026-09-05",
+      "last_confirmed_open": "2026-09-05",
+      "postingStatus": "confirmed open at last scan",
+      "sourcePath": "company_careers/current_openings.md",
+      "sourceDate": "2026-09-05T12:00:00Z",
+      "hash": "5b900948c6c06b16593605882d4896535991578e7a6b9eb9d03e4b0a84837b93",
+      "deadline": null,
+      "deadlineProvenance": null,
+      "postingFingerprint": "",
+      "lastCheckedAt": null,
+      "verificationNotes": "",
+      "reviewRequired": false,
+      "assessmentDate": null,
+      "salaryBands": [
+        {
+          "text": "$160,000–$250,000 USD annual base in CA, CT",
+          "min": 160000,
+          "max": 250000,
+          "currency": "USD",
+          "basis": "published base"
+        },
+        {
+          "text": "$160,000–$250,000 USD annual base in CA, CT; $150,000–$240,000 USD annual base in CO, HI.",
+          "min": 150000,
+          "max": 240000,
+          "currency": "USD",
+          "basis": "published base"
+        }
+      ],
+      "salaryKind": "published",
+      "recruiterQuestions": [
+        {
+          "question": "What hours did this team actually work in a typical week and during its last busy period?",
+          "evidence": "Actual weekly hours are not documented.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "How often is the on-call rotation, how many after-hours pages occurred recently, and what recovery time is provided?",
+          "evidence": "Working hours and travel are unverified.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "Which US states may I work from, and what notice or approval is required when my physical work location changes?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        },
+        {
+          "question": "What travel is required each year, for how long, and how much scheduling flexibility is available?",
+          "evidence": "US remote, approved states require confirmation.",
+          "sourcePath": "company_careers/current_openings.md"
+        }
+      ]
+    }
+  ]
+}

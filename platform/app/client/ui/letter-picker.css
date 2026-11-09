@@ -1,0 +1,35 @@
+/* Letter-keyed segmented radio group; tiles in a cluster share one border. */
+.letter-picker { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
+.letter-cluster { display: inline-flex; }
+.letter-choice {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.75rem; height: 1.75rem; padding: 0 0.35rem; box-sizing: border-box;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font: inherit; font-size: 0.75rem; font-weight: 600; letter-spacing: 0; line-height: 1; cursor: pointer;
+}
+.letter-cluster > .letter-choice + .letter-choice { margin-left: -1px; }
+.letter-cluster > .letter-choice:first-child { border-radius: 5px 0 0 5px; }
+.letter-cluster > .letter-choice:last-child { border-radius: 0 5px 5px 0; }
+.letter-cluster > .letter-choice:only-child { border-radius: 5px; }
+.letter-choice:hover:not(:disabled) { background: var(--surface-muted); }
+.letter-choice.is-checked {
+  z-index: 1; border-color: var(--primary); color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary);
+}
+.letter-choice:focus-visible { z-index: 2; outline-offset: 2px; }
+.letter-choice.is-default::after {
+  content: ""; position: absolute; left: 50%; bottom: 3px; width: 3px; height: 3px;
+  margin-left: -1.5px; border-radius: 50%; background: currentColor;
+}
+.letter-choice.is-unavailable { border-style: dashed; }
+.letter-choice:disabled { opacity: 0.5; cursor: not-allowed; }
+.letter-picker.is-compact .letter-choice { min-width: 1.5rem; height: 1.5rem; }
+
+.letter-key { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; padding: 0; list-style: none; }
+.letter-key > li { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+/* The separator trails each entry so a wrapped line never starts with a dot. */
+.letter-key > li::after { content: "·"; margin: 0 8px; color: var(--muted); }
+.letter-key > li:last-child::after, .letter-key > li:has(+ .is-new-cluster)::after { content: none; }
+.letter-key > li.is-new-cluster { margin-left: 14px; }
+.letter-choice.is-key {
+  min-width: 1.15rem; height: 1.15rem; padding: 0 0.2rem; border-radius: 3px; font-size: 0.642857rem; cursor: default;
+}

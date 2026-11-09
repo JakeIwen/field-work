@@ -1,0 +1,10 @@
+.button.materials-answers-only {
+  color: var(--info-text);
+  border-color: var(--info-text);
+}
+
+.material-answers-status {
+  color: var(--info-text);
+  font-size: 0.85rem;
+  margin: 0;
+}
